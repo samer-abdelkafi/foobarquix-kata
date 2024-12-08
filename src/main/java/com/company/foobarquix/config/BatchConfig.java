@@ -13,7 +13,6 @@ import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.mapping.PassThroughLineMapper;
 import org.springframework.batch.item.file.transform.DelimitedLineAggregator;
-import org.springframework.batch.item.file.transform.FieldExtractor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -52,7 +51,7 @@ public class BatchConfig {
         writer.setResource(new FileSystemResource(filePath + ".out"));
         writer.setLineAggregator(new DelimitedLineAggregator<>() {{
             setDelimiter("\t");
-            setFieldExtractor((FieldExtractor<Row>) pair -> new Object[]{
+            setFieldExtractor(pair -> new Object[]{
                     pair.getKey(),
                     "\"" + pair.getValue() + "\""
             });
