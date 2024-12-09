@@ -20,7 +20,10 @@ Exposes an endpoint to process a single number.
 
 URL: http://localhost:8080/api/foobarquix/{number}
 
-Example: curl http://localhost:8080/api/foobarquix/15
+Example: 
+```
+curl http://localhost:8080/api/foobarquix/15
+```
 
 Response: "FOOBARBAR"
 
@@ -38,20 +41,21 @@ the original number and its transformation.
 ### How to Run
 1 - Clone the Repository
 Clone the project from GitHub to your local machine.
-
+```
 git clone https://github.com/your-username/foobarquix-kata.git
 
 cd foobarquix-kata
+```
 
 2 - Build the Project
 Use Maven to compile the project and package it into a JAR file.
-
+```
 mvn clean install
-
+```
 3 - Run the Application
-
+```
 java -jar target/foobarquix-kata-1.0-SNAPSHOT.jar src/test/resources/input-test-file.txt
-
+```
 The result will be saved in the same directory as the input file with a ".out" extension.
 
 After starting the application, you can use your browser to test the API.
